@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;1,500&family=Inconsolata:wght@700&family=Montserrat:wght@500&family=Open+Sans&display=swap');
+
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 13px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: .04rem;
+  line-height: 1.5rem;
+}
+
+main {
+  padding: 5rem 1.9rem;
+}
+
+article {
+  padding: 1rem 2rem;
+  margin-bottom: 1.7rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 0 10px var(--light-gray);
+}
+
+figure {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+img {
+  border-radius: 50%;
+}
+
+figcaption {
+  font-weight: 600;
+}
+
+span {
+  display: block;
+  margin-top: .2rem;
+  font-weight: 500;
+}
+
+/* Update the background color for each of the card review*/
+article:first-child {
+  background-color: var(--moderate-violet);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position:top right 25%;
+}
+
+article:nth-child(2) {
+  background-color: var(--very-dark-grayish-blue);
+}
+
+article:nth-child(4) {
+  background-color: var(--very-dark-blackish-blue);
+}
+
+article:nth-child(3), article:nth-child(5) {
+  background-color: var(--white);
+}
+
+article:first-child img, article:nth-child(4) img {
+  border: .2rem solid hsl(263, 60%, 67%);
+}
+
+/* Style the text color of each card review*/
+.dark-bg {
+  color: var(--white);
+}
+
+.dark-bg p {
+  opacity: .7;
+}
+
+.dark-bg figcaption {
+  color: var(--light-grayish-blue);
+}
+
+.dark-bg span {
+  opacity: .5;
+}
+
+.light-bg {
+  color: var(--very-dark-grayish-blue)
+}
+
+.light-bg p {
+  opacity: .7;
+}
+
+.light-bg span {
+  opacity: .5;
+}
+
+a {
+  text-decoration: none;
+  color: var(--moderate-violet);
+}
+
+/* Responsive layout */
+@media (min-width: 1023px) {
+  main {
+    padding: 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+      "card1 card1 card2 card5"
+      "card3 card4 card4 card5"
+    ;
+    gap: 2rem;
+    justify-items: stretch;
+  }
+
+  article {
+    margin-bottom: 0;
+  }
+
+  article:first-child {
+    grid-area: card1;
+  }
+
+  article:nth-child(2) {
+    grid-area: card2;
+  }
+
+  article:nth-child(3) {
+    grid-area: card3;
+  }
+
+  article:nth-child(4) {
+    grid-area: card4;
+  }
+
+  article:nth-child(5) {
+    grid-area: card5;
+  }
+}
+
